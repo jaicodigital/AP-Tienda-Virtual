@@ -1,9 +1,47 @@
 import React from 'react';
+import styled from 'styled-components';
+import SearchIcon from '@mui/icons-material/Search';
+
+const Container = styled.div`
+height: 100px;
+`;
+
+const Wrapper = styled.div`
+padding: 10px 20px;
+display: flex;
+justify-content: space-between;
+`;
+
+const Lenguage = styled.span`
+font-size: 14px;
+cursor: pointer;
+`;
+
+const SearchContainer = styled.div`
+
+`; 
+
+const Left = styled.div`
+flex: 1;
+`
+const Center = styled.div`
+flex: 1;
+`
+const Right = styled.div`
+flex: 1;
+`
 
 export default function Navbar () {
   return (
-     <div>
-         NavBar
-     </div>
+     <Container>
+         <Wrapper>
+             <Left>
+               <Lenguage>EN</Lenguage>
+               <SearchContainer><SearchIcon/></SearchContainer>
+             </Left>
+             <Center>Center</Center>
+             <Right>Right</Right>
+         </Wrapper>          
+     </Container>
   ) 
 };
