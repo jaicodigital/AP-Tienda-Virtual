@@ -67,7 +67,7 @@ export default function Navbar() {
         <Left>
           <Lenguage>EN</Lenguage>
           <SearchContainer>
-            <Input placeholder="Search" />
+            <Input placeholder="Busca tu producto" />
             <SearchIcon style={{color: "gray", fontSize:16}} />
           </SearchContainer>
         </Left>
