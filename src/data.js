@@ -41,37 +41,36 @@ export const categories = [
 export const popularProducts = [
   {
     id: 1,
-    img: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cHJvZHVjdHN8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    img: "https://boavitastore.com/wp-content/uploads/2020/11/45485-600x600.png",
   },
   {
     id: 2,
-    img: "https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZHVjdHN8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    img: "https://giovannilopez.com/wp-content/uploads/2021/06/IMG_8281-600x800.png",
   },
   {
     id: 3,
-    img: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHByb2R1Y3RzfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    img: "https://todoenetiquetas.com.mx/wp-content/uploads/2018/10/etiquetas-para-productos-de-belleza.png",
   },
   {
     id: 4,
-    img: "https://images.unsplash.com/photo-1589782182703-2aaa69037b5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2R1Y3RzfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    img: "https://fptechcr.com/wp-content/uploads/2020/07/samsung-galaxy-a70-128gb-black.png",
   },
   {
     id: 5,
-    img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHByb2R1Y3RzfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    img: "https://cdn.shopify.com/s/files/1/0404/4367/4777/products/BYB_BELYTENIS3_large.png?v=1634145817",
   },
   {
     id: 6,
-    img: "https://images.unsplash.com/photo-1609250291996-fdebe6020a8f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZHVjdHN8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    img: "https://media.aws.alkosto.com/ymarketingcolcomercio/Alkosto/tv/contenido/kalley/7705946475716/box-15.png",
   },
   {
     id: 7,
-    img: "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fHByb2R1Y3RzfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    img: "https://sc04.alicdn.com/kf/Sdbb4af6af3bc438583dcd491ff71a933t.png",
   },
   {
     id: 8,
-    img: "https://images.unsplash.com/photo-1617858123189-b26eb62d8eb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTMwfHxwcm9kdWN0c3xlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60",
+    img: "https://cdn.shopify.com/s/files/1/0453/6159/4535/products/NIKE_blanco_PUNTA_negro_400x.png?v=1621783381",
   },
 ];
 
-export default sliderItems; 
-  
+export default sliderItems;
