@@ -72,7 +72,7 @@ export default function Navbar() {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>AP Tienda Virtual</Logo>
+          <Logo>AP Tienda VirtuaL.</Logo>
         </Center>
         <Right>
           <MenuItem>Registrar</MenuItem>
