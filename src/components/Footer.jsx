@@ -124,7 +124,7 @@ export default function Footer() {
               +57 310 7010719
           </ContactItem>
           <ContactItem><EmailIcon style={{marginRight:"10px"}}/>
-              tiendavirtual@gmail.com
+              tiendavirtualap@gmail.com
           </ContactItem>
           <Payment src="https://icsa.edu.co/wp-content/uploads/2020/03/medios_de_pago.png" />
       </Right>
