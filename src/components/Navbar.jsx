@@ -75,7 +75,7 @@ export default function Navbar() {
           <Logo>AP Tienda VirtuaL.</Logo>
         </Center>
         <Right>
-          <MenuItem>Registrar</MenuItem>
+          <MenuItem>Registrarse</MenuItem>
           <MenuItem>Iniciar Sesión</MenuItem>
           <MenuItem>
             <Badge badgeContent={4} color="primary">
