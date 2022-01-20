@@ -73,7 +73,7 @@ const ContactItem = styled.div`
 `;
 
 const Payment = styled.img`
-  width: 100%;
+  width: 70%;
 `;
 
 export default function Footer() {
@@ -126,7 +126,7 @@ export default function Footer() {
           <ContactItem><EmailIcon style={{marginRight:"10px"}}/>
               tiendavirtual@gmail.com
           </ContactItem>
-          <Payment src="https://pantyjeans.com/wp-content/uploads/2020/09/medios_de_pago_epayco.png" />
+          <Payment src="https://icsa.edu.co/wp-content/uploads/2020/03/medios_de_pago.png" />
       </Right>
     </Container>
   );

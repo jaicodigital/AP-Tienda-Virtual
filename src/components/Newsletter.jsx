@@ -45,7 +45,7 @@ export default function Newsletter() {
      <Title>Newsletter</Title>
      <Desc>Suscribete y entérate de las mejores promociones.</Desc>
      <InputContainer>
-      <Input placeholder="Escribe tu email" />
+      <Input placeholder="Escribe tu correo electronico" />
         <Button><SendOutlinedIcon/></Button>
      </InputContainer>
     </Container>
