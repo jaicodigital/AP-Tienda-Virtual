@@ -1,14 +1,17 @@
 import styled from "styled-components";
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import PinterestIcon from '@mui/icons-material/Pinterest';
-import RoomIcon from '@mui/icons-material/Room';
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import EmailIcon from '@mui/icons-material/Email';
+import {Facebook,
+  Instagram,
+  Twitter,
+  Pinterest,
+  Room,
+  LocalPhone,
+  Email,
+} from '@mui/icons-material';
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   display: flex;
+  ${mobile({ flexDirection: "column" })}
 `;
 
 const Left = styled.div`
@@ -88,16 +91,16 @@ export default function Footer() {
         </Desc>
         <SocialContainer>
             <SocialIcon color="3B5999">
-                <FacebookIcon />
+                <Facebook />
             </SocialIcon>
             <SocialIcon color="E4405F">
-                <InstagramIcon />
+                <Instagram />
             </SocialIcon>
             <SocialIcon color="55ACEE">
-                <TwitterIcon />
+                <Twitter />
             </SocialIcon>
             <SocialIcon color="E60023">
-                <PinterestIcon />
+                <Pinterest />
             </SocialIcon>
         </SocialContainer>
       </Left>
@@ -117,13 +120,13 @@ export default function Footer() {
       </Center>
       <Right>
           <Title>Contacto</Title>
-          <ContactItem><RoomIcon style={{marginRight:"10px"}}/>
+          <ContactItem><Room style={{marginRight:"10px"}}/>
               Cartagena de Indias - Colombia
           </ContactItem>
-          <ContactItem><LocalPhoneIcon style={{marginRight:"10px"}}/>
+          <ContactItem><LocalPhone style={{marginRight:"10px"}}/>
               +57 310 7010719
           </ContactItem>
-          <ContactItem><EmailIcon style={{marginRight:"10px"}}/>
+          <ContactItem><Email style={{marginRight:"10px"}}/>
               tiendavirtualap@gmail.com
           </ContactItem>
           <Payment src="https://icsa.edu.co/wp-content/uploads/2020/03/medios_de_pago.png" />
