@@ -22,7 +22,7 @@ const Top = styled.div`
   padding: 20px;
 `;
 
-const TopButton = styled.div`
+const TopButton = styled.button`
   padding: 10px;
   font-weight: 600;
   cursor: pointer;
@@ -40,12 +40,12 @@ const TopText = styled.span`
   margin: 0px 10px;
 `;
 
-const Bottom = styled.button`
+const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
 `;
 
-const Info = styled.button`
+const Info = styled.div`
   flex: 3;
 `;
 
@@ -107,7 +107,7 @@ const ProductPrice = styled.div`
 `;
 
 const Hr = styled.hr`
-  background-color: #e0e0e0;
+  background-color: #eee;
   border: none;
   height: 1px;
 `;
@@ -117,22 +117,30 @@ const Summary = styled.div`
   border: 0.5px solid lightgray;
   border-radius: 10px;
   padding: 20px;
+  height: 50vh;
 `;
 
 const SummaryTitle = styled.h1`
-  
+  font-weight: 200;
 `;
 const SummaryItem = styled.div`
-  
+  margin: 30px 0px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: ${(props) => props.type === "total" && "500"};
+  font-size: ${(props) => props.type === "total" && "24px"};
 `;
-const SummaryItemText = styled.span`
-  
-`;
-const SummaryItemPrice = styled.span`
-  
-`;
-const SummaryButton = styled.button`
-  
+
+const SummaryItemText = styled.span``;
+
+const SummaryItemPrice = styled.span``;
+
+const Button = styled.button`
+  width: 100%;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  font-weight: 600;
 `;
 
 export default function Cart() {
@@ -174,12 +182,10 @@ export default function Cart() {
                   <ProductAmount>2</ProductAmount>
                   <Remove />
                 </ProductAmountContainer>
-                <ProductPrice>
-                    $250.000
-                </ProductPrice>
+                <ProductPrice>$250.000</ProductPrice>
               </PriceDetail>
             </Product>
-            <Hr/>
+            <Hr />
             <Product>
               <ProductDetail>
                 <Image src="https://img.fcbayern.com/image/upload/q_auto,f_auto/w_800,h_1067,c_pad/eCommerce/produkte/24069_1/hoodie-retro.png" />
@@ -202,31 +208,29 @@ export default function Cart() {
                   <ProductAmount>2</ProductAmount>
                   <Remove />
                 </ProductAmountContainer>
-                <ProductPrice>
-                    $70.000
-                </ProductPrice>
+                <ProductPrice>$70.000</ProductPrice>
               </PriceDetail>
             </Product>
           </Info>
           <Summary>
             <SummaryTitle>Resumen de compra</SummaryTitle>
             <SummaryItem>
-                <SummaryItemText>SubTotal</SummaryItemText>
-                <SummaryItemPrice>$ 320.000</SummaryItemPrice>
+              <SummaryItemText>SubTotal</SummaryItemText>
+              <SummaryItemPrice>$ 320.000</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
-                <SummaryItemText>Costo estimado de envío</SummaryItemText>
-                <SummaryItemPrice>$ 10.000</SummaryItemPrice>
+              <SummaryItemText>Costo estimado de envío</SummaryItemText>
+              <SummaryItemPrice>$ 10.000</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
-                <SummaryItemText>Descuento en envio</SummaryItemText>
-                <SummaryItemPrice>$ -10.000</SummaryItemPrice>
+              <SummaryItemText>Descuento en envio</SummaryItemText>
+              <SummaryItemPrice>$ -10.000</SummaryItemPrice>
             </SummaryItem>
-            <SummaryItem>
-                <SummaryItemText type="total">Total</SummaryItemText>
-                <SummaryItemPrice>$ 320.000</SummaryItemPrice>
+            <SummaryItem type="total">
+              <SummaryItemText>Total</SummaryItemText>
+              <SummaryItemPrice>$ 320.000</SummaryItemPrice>
             </SummaryItem>
-            <SummaryButton>Comprobar Ahora</SummaryButton>
+            <Button>COMPRAR AHORA</Button>
           </Summary>
         </Bottom>
       </Wrapper>
