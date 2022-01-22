@@ -3,16 +3,19 @@ import styled from "styled-components";
 import SearchIcon from "@mui/icons-material/Search";
 import Badge from "@mui/material/Badge";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { mobile } from "../responsive.js";
 
 const Container = styled.div`
-  height: 100px;
+  height: 60px;
+  ${mobile({ height: "50px" })}
 `;
 
 const Wrapper = styled.div`
   padding: 10px 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  ${mobile({ padding: "10px 0px" })}
 `;
 
 const Left = styled.div`
@@ -21,9 +24,10 @@ const Left = styled.div`
   align-items: center;
 `;
 
-const Lenguage = styled.span`
+const Language = styled.span`
   font-size: 14px;
   cursor: pointer;
+  ${mobile({ display: "none" })}
 `;
 
 const SearchContainer = styled.div`
@@ -36,6 +40,7 @@ const SearchContainer = styled.div`
 
 const Input = styled.input`
   border: none;
+  ${mobile({ width: "50px" })}
 `;
 
 const Center = styled.div`
@@ -45,19 +50,22 @@ const Center = styled.div`
 
 const Logo = styled.h1`
   font-weight: bold;
+  ${mobile({ fontSize: "24px" })}
 `;
 
 const Right = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: flex-end;    
+  justify-content: flex-end;
+  ${mobile({ flex: 2, justifyContent: "center" })}
 `;
 
 const MenuItem = styled.div`
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
+  ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 
 export default function Navbar() {
@@ -65,10 +73,10 @@ export default function Navbar() {
     <Container>
       <Wrapper>
         <Left>
-          <Lenguage>EN</Lenguage>
+          <Language>EN</Language>
           <SearchContainer>
             <Input placeholder="Busca tu producto" />
-            <SearchIcon style={{color: "gray", fontSize:16}} />
+            <SearchIcon style={{ color: "gray", fontSize: 16 }} />
           </SearchContainer>
         </Left>
         <Center>
@@ -79,7 +87,7 @@ export default function Navbar() {
           <MenuItem>Iniciar Sesión</MenuItem>
           <MenuItem>
             <Badge badgeContent={4} color="primary">
-              <ShoppingCartOutlinedIcon/>
+              <ShoppingCartOutlinedIcon />
             </Badge>
           </MenuItem>
         </Right>
