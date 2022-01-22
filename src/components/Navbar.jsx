@@ -1,13 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import SearchIcon from "@mui/icons-material/Search";
+import {Search,
+  ShoppingCartOutlined,
+} from "@mui/icons-material";
 import Badge from "@mui/material/Badge";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { mobile } from "../responsive.js";
 
 const Container = styled.div`
   height: 60px;
-  ${mobile({ height: "50px" })}
+  ${mobile({ height: "50px", 
+     marginBottom: "50px", marginLeft: "10px", marginRight: "10px" })}
 `;
 
 const Wrapper = styled.div`
@@ -50,7 +52,7 @@ const Center = styled.div`
 
 const Logo = styled.h1`
   font-weight: bold;
-  ${mobile({ fontSize: "24px" })}
+  ${mobile({ fontSize: "20px" })}
 `;
 
 const Right = styled.div`
@@ -76,7 +78,7 @@ export default function Navbar() {
           <Language>EN</Language>
           <SearchContainer>
             <Input placeholder="Busca tu producto" />
-            <SearchIcon style={{ color: "gray", fontSize: 16 }} />
+            <Search style={{ color: "gray", fontSize: 16 }} />
           </SearchContainer>
         </Left>
         <Center>
@@ -87,7 +89,7 @@ export default function Navbar() {
           <MenuItem>Iniciar Sesión</MenuItem>
           <MenuItem>
             <Badge badgeContent={4} color="primary">
-              <ShoppingCartOutlinedIcon />
+              <ShoppingCartOutlined />
             </Badge>
           </MenuItem>
         </Right>

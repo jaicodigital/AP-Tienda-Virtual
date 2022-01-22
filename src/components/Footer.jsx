@@ -21,15 +21,16 @@ const Left = styled.div`
   padding: 20px;
 `;
 
-const Logo = styled.h1`
-  
-`;
+const Logo = styled.h1``;
+
 const Desc = styled.p`
   margin: 20px 0px;
 `;
+
 const SocialContainer = styled.div`
   display: flex;
 `;
+
 const SocialIcon = styled.div`
   width: 40px;
   height: 40px;
@@ -45,6 +46,7 @@ const SocialIcon = styled.div`
 const Center = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({ display: "none" })}
 `;
 
 const Title = styled.h3`
@@ -67,6 +69,7 @@ const ListItem = styled.li`
 const Right = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({ backgroundColor: "#fff8f8" })}
 `;
 
 const ContactItem = styled.div`
@@ -76,7 +79,7 @@ const ContactItem = styled.div`
 `;
 
 const Payment = styled.img`
-  width: 70%;
+  width: 50%;
 `;
 
 export default function Footer() {

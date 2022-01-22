@@ -1,7 +1,9 @@
 import styled from "styled-components";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import {ShoppingCartOutlined,
+  SearchOutlined,
+  FavoriteBorderOutlined,
+} from "@mui/icons-material";
+
 
 const Info = styled.div`
   opacity: 0;
@@ -71,13 +73,13 @@ export default function Product({ item }) {
       <Image src={item.img} />
       <Info>
         <Icon>
-          <ShoppingCartOutlinedIcon />
+          <ShoppingCartOutlined />
         </Icon>
         <Icon>
-          <SearchOutlinedIcon />
+          <SearchOutlined />
         </Icon>
         <Icon>
-          <FavoriteBorderOutlinedIcon />
+          <FavoriteBorderOutlined />
         </Icon>
       </Info>
     </Container>
