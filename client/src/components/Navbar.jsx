@@ -9,7 +9,7 @@ import { mobile } from "../responsive.js";
 const Container = styled.div`
   height: 60px;
   ${mobile({ height: "50px", 
-     marginBottom: "50px", marginLeft: "10px", marginRight: "10px" })}
+     marginBottom: "50px", marginLeft: "10px", marginRight: "10px" })} 
 `;
 
 const Wrapper = styled.div`
