@@ -1,12 +1,13 @@
 import styled from "styled-components";
-import {Facebook,
+import {
+  Facebook,
   Instagram,
-  Twitter,
+  MailOutline,
+  Phone,
   Pinterest,
   Room,
-  LocalPhone,
-  Email,
-} from '@mui/icons-material';
+  Twitter,
+} from "@material-ui/icons";
 import { mobile } from "../responsive";
 
 const Container = styled.div`
@@ -126,10 +127,10 @@ export default function Footer() {
           <ContactItem><Room style={{marginRight:"10px"}}/>
               Cartagena de Indias - Colombia
           </ContactItem>
-          <ContactItem><LocalPhone style={{marginRight:"10px"}}/>
+          <ContactItem><Phone style={{marginRight:"10px"}}/>
               +57 310 7010719
           </ContactItem>
-          <ContactItem><Email style={{marginRight:"10px"}}/>
+          <ContactItem><MailOutline style={{marginRight:"10px"}}/>
               tiendavirtualap@gmail.com
           </ContactItem>
           <Payment src="https://icsa.edu.co/wp-content/uploads/2020/03/medios_de_pago.png" />

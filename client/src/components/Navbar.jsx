@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import {Search,
-  ShoppingCartOutlined,
-} from "@mui/icons-material";
-import Badge from "@mui/material/Badge";
+import { Search, ShoppingCartOutlined } from "@material-ui/icons";
+import { Badge } from "@material-ui/core";
 import { mobile } from "../responsive.js";
 
 const Container = styled.div`

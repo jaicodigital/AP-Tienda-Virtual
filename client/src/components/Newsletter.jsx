@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
+import { Send } from "@material-ui/icons";
 import { mobile } from "../responsive";
 
 const Container = styled.div`
@@ -54,7 +54,7 @@ export default function Newsletter() {
      <InputContainer>
       <Input placeholder="Escribe tu correo electronico" />
         <Button>
-          <SendOutlinedIcon/>
+          <Send/>
         </Button>
      </InputContainer>
     </Container>
