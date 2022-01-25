@@ -3,11 +3,16 @@ import styled from "styled-components";
 import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import { Badge } from "@material-ui/core";
 import { mobile } from "../responsive.js";
+import { useSelector } from "react-redux";
 
 const Container = styled.div`
   height: 60px;
-  ${mobile({ height: "50px", 
-     marginBottom: "50px", marginLeft: "10px", marginRight: "10px" })} 
+  ${mobile({
+    height: "50px",
+    marginBottom: "50px",
+    marginLeft: "10px",
+    marginRight: "10px",
+  })}
 `;
 
 const Wrapper = styled.div`
@@ -69,6 +74,7 @@ const MenuItem = styled.div`
 `;
 
 export default function Navbar() {
+  const quantity = useSelector(state=>state.cart.quantity);
   return (
     <Container>
       <Wrapper>
@@ -86,7 +92,7 @@ export default function Navbar() {
           <MenuItem>Registrarse</MenuItem>
           <MenuItem>Iniciar Sesión</MenuItem>
           <MenuItem>
-            <Badge badgeContent={4} color="primary">
+            <Badge badgeContent={quantity} color="primary">
               <ShoppingCartOutlined />
             </Badge>
           </MenuItem>
