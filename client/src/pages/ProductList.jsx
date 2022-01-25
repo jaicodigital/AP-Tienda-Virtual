@@ -71,6 +71,7 @@ export default function ProductList() {
             <Option>Azul</Option>
             <Option>Amarillo</Option>
             <Option>Verde</Option>
+            <Option>Variado</Option>
           </Select>
           <Select name="talla" onChange={handleFilters}>
             <Option disabled>Talla</Option>
