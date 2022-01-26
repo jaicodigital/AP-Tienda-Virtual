@@ -1,5 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 import { mobile } from "../responsive";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../Redux/apiCalls";
 
 const Container = styled.div`
   width: 100vw;
@@ -10,8 +13,8 @@ const Container = styled.div`
     ),
     url("https://st.depositphotos.com/1018174/2226/i/600/depositphotos_22265713-stock-photo-nice-photo-of-young-attractive.jpg")
       center;
-  
-  backgorund-size: cover;    
+
+  backgorund-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,19 +65,42 @@ const Link = styled.a`
   cursor: pointer;
 `;
 
+const Error = styled.span`
+  color: red;
+`;
+
 export default function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const { isFetching, error } = useSelector((state) => state.user);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    login(dispatch, { username, password });
+  };
   return (
     <Container>
       <Wrapper>
         <Title>Iniciar Sesión</Title>
         <Form>
-          <Input placeholder="Usuario" />
-          <Input placeholder="Contraseña" />
-          <Button>Inicia Sesión</Button>
+          <Input
+            placeholder="Usuario"
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <Input
+            placeholder="Contraseña"
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Button onClick={handleClick} disabled={isFetching}>
+            Inicia Sesión
+          </Button>
+          {error && <Error>Algo salió mal... Inténtalo de nuevo</Error>}
           <Link>¿No te acuerdas de la contraseña?</Link>
-          <Link>Crear una nueva cuenta</Link>
+          <Link>Crear una nueva cuenta</Link> 
         </Form>
       </Wrapper>
     </Container>
-  )
+  );
 }
