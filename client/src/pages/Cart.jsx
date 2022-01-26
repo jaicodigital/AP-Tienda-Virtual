@@ -4,6 +4,14 @@ import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import { Add, Remove } from "@material-ui/icons";
 import { mobile } from "../responsive";
+import { useSelector } from "react-redux";
+import StripeCheckout from "react-stripe-checkout";
+import { useEffect, useState } from "react";
+import { userRequest } from "../requestMethods";
+import { useHistory } from "react-router";
+import logo from "../Assets/img/Logo.png";
+
+const KEY = process.env.REACT_APP_STRIPE;
 
 const Container = styled.div``;
 
@@ -35,7 +43,7 @@ const TopButton = styled.button`
 `;
 
 const TopTexts = styled.div`
-${mobile({ display: "none" })}
+  ${mobile({ display: "none" })}
 `;
 
 const TopText = styled.span`
@@ -152,6 +160,30 @@ const Button = styled.button`
 `;
 
 export default function Cart() {
+  const cart = useSelector((state) => state.cart);
+  const [stripeToken, setStripeToken] = useState(null);
+  const history = useHistory();
+
+  const onToken = (token) => {
+    setStripeToken(token);
+  };
+
+  useEffect(() => {
+    const makeRequest = async () => {
+      try {
+        const res = await userRequest.post("/checkout/payment", {
+          tokenId: stripeToken.id,
+          amount: 500,
+        });
+        history.push("/success", {
+          stripeData: res.data,
+          products: cart,
+        });
+      } catch {}
+    };
+    stripeToken && makeRequest();
+  }, [stripeToken, cart, history]);
+
   return (
     <Container>
       <Navbar />
@@ -168,77 +200,67 @@ export default function Cart() {
         </Top>
         <Bottom>
           <Info>
-            <Product>
-              <ProductDetail>
-                <Image src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1559323565-Allbirds_August_ReFresh_WL_RN_Tuke_Teal_BTY_40fdd41f-8f8d-4b6f-bcd4-df99bf5834e7_600x600.png?crop=1xw:1xh;center,top&resize=480:*" />
-                <Details>
-                  <ProductName>
-                    <b>Producto:</b> ZAPATILLA ADIDAS YERSI
-                  </ProductName>
-                  <ProductId>
-                    <b>Id:</b> 6165496215
-                  </ProductId>
-                  <ProductColor color="black" />
-                  <ProductSize>
-                    <b>Talla:</b> 37.5
-                  </ProductSize>
-                </Details>
-              </ProductDetail>
-              <PriceDetail>
-                <ProductAmountContainer>
-                  <Add />
-                  <ProductAmount>2</ProductAmount>
-                  <Remove />
-                </ProductAmountContainer>
-                <ProductPrice>$250.000</ProductPrice>
-              </PriceDetail>
-            </Product>
+            {cart.products.map((product) => (
+              <Product>
+                <ProductDetail>
+                  <Image src={product.img} />
+                  <Details>
+                    <ProductName>
+                      <b>Producto:</b> {product.title}
+                    </ProductName>
+                    <ProductId>
+                      <b>Id:</b> {product._id}
+                    </ProductId>
+                    <ProductColor color={product.color} />
+                    <ProductSize>
+                      <b>Talla:</b> {product.size}
+                    </ProductSize>
+                  </Details>
+                </ProductDetail>
+                <PriceDetail>
+                  <ProductAmountContainer>
+                    <Add />
+                    <ProductAmount>{product.quantity}</ProductAmount>
+                    <Remove />
+                  </ProductAmountContainer>
+                  <ProductPrice>
+                    $ {product.price * product.quantity}
+                  </ProductPrice>
+                </PriceDetail>
+              </Product>
+            ))}
             <Hr />
-            <Product>
-              <ProductDetail>
-                <Image src="https://img.fcbayern.com/image/upload/q_auto,f_auto/w_800,h_1067,c_pad/eCommerce/produkte/24069_1/hoodie-retro.png" />
-                <Details>
-                  <ProductName>
-                    <b>Producto:</b> ZAPATILLA ADIDAS YERSI
-                  </ProductName>
-                  <ProductId>
-                    <b>Id:</b> 316985
-                  </ProductId>
-                  <ProductColor color="gray" />
-                  <ProductSize>
-                    <b>Talla:</b> M
-                  </ProductSize>
-                </Details>
-              </ProductDetail>
-              <PriceDetail>
-                <ProductAmountContainer>
-                  <Add />
-                  <ProductAmount>2</ProductAmount>
-                  <Remove />
-                </ProductAmountContainer>
-                <ProductPrice>$70.000</ProductPrice>
-              </PriceDetail>
-            </Product>
           </Info>
           <Summary>
-            <SummaryTitle>Resumen de compra</SummaryTitle>
+            <SummaryTitle>Resumen de tu compra</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>SubTotal</SummaryItemText>
-              <SummaryItemPrice>$ 320.000</SummaryItemPrice>
+              <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Costo estimado de envío</SummaryItemText>
               <SummaryItemPrice>$ 10.000</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
-              <SummaryItemText>Descuento en envio</SummaryItemText>
+              <SummaryItemText>Descuento en envío</SummaryItemText>
               <SummaryItemPrice>$ -10.000</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>$ 320.000</SummaryItemPrice>
+              <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
             </SummaryItem>
-            <Button>COMPRAR AHORA</Button>
+            <StripeCheckout
+              name="AP Tienda Virtual"
+              image={logo}
+              billingAddress
+              shippingAddress
+              description={`Completa el pago de tu pedido: $${cart.total}`}
+              amount={cart.total * 100}
+              token={onToken}
+              stripeKey={KEY}
+            >
+              <Button>COMPRAR AHORA</Button>
+            </StripeCheckout>
           </Summary>
         </Bottom>
       </Wrapper>

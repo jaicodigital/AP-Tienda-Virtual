@@ -4,6 +4,7 @@ import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import { Badge } from "@material-ui/core";
 import { mobile } from "../responsive.js";
 import { useSelector } from "react-redux";
+import {Link} from "react-router-dom";
 
 const Container = styled.div`
   height: 60px;
@@ -91,11 +92,13 @@ export default function Navbar() {
         <Right>
           <MenuItem>Registrarse</MenuItem>
           <MenuItem>Iniciar Sesión</MenuItem>
+          <Link to="/cart">
           <MenuItem>
             <Badge badgeContent={quantity} color="primary">
               <ShoppingCartOutlined />
             </Badge>
           </MenuItem>
+          </Link>
         </Right>
       </Wrapper>
     </Container>

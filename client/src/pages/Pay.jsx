@@ -3,6 +3,8 @@ import Logo from "../Assets/img/Logo.png";
 import { useState, useEffect } from "react";
 import axios from "axios"; 
 import { Navigate } from "react-router-dom";
+const dotenv = require("dotenv");
+dotenv.config();
 
 const KEY =
   "pk_test_51KLFP9GiIRj5NEd6APdQJQpgCUFNOEUl1azY7SSHXtIqNTskLjthCVn3rzTFWEeiD4ItAKA7KTf2pOob6qfHnpBu00Dn6N4vLv";
@@ -19,7 +21,7 @@ const Pay = () => {
     const makeRequest = async () => {
       try {
         const res = await axios.post(
-          "http://localhost:5000/api/checkout/payment",
+          `${process.env.REACT_APP_API_URL}/api/checkout/payment`,
           {
             tokenId: stripeToken.id,
             amount: 2000,

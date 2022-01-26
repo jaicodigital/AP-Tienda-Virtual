@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Product from "./Product";
 import axios from "axios";
 
+
 const Container = styled.div`
   padding: 20px;
   display: flex;
@@ -21,8 +22,8 @@ export default function Products({ cat, filters, sort }) {
       try {
         const res = await axios.get(
           cat
-            ? `http://localhost:3001/api/products?category=${cat}`
-            : "http://localhost:3001/api/products"
+            ? `${process.env.REACT_APP_API_URL}/api/products?category=${cat}`
+            : `${process.env.REACT_APP_API_URL}/api/products`
         );
         setProducts(res.data);
       } catch (error) {
