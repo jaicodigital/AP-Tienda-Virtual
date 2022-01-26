@@ -4,9 +4,9 @@ import {
   Instagram,
   MailOutline,
   Phone,
-  Pinterest,
+  // Pinterest,
   Room,
-  Twitter,
+  // Twitter,
 } from "@material-ui/icons";
 import { mobile } from "../responsive";
 
@@ -37,11 +37,12 @@ const SocialIcon = styled.div`
   height: 40px;
   border-radius: 50%;
   color: white;
-  background-color: #${props => props.color};
+  background-color: #${(props) => props.color};
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 20px;
+  cursor: pointer;
 `;
 
 const Center = styled.div`
@@ -52,7 +53,7 @@ const Center = styled.div`
 
 const Title = styled.h3`
   margin-bottom: 30px;
-`; 
+`;
 
 const List = styled.ul`
   margin: 0;
@@ -60,12 +61,12 @@ const List = styled.ul`
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-`; 
+`;
 
 const ListItem = styled.li`
   width: 50%;
   margin-bottom: 10px;
-`; 
+`;
 
 const Right = styled.div`
   flex: 1;
@@ -94,46 +95,56 @@ export default function Footer() {
           et viverra justo commodo. Proin sodales pulvinar tempor.
         </Desc>
         <SocialContainer>
-            <SocialIcon color="3B5999">
-                <Facebook />
-            </SocialIcon>
+        <a href="https://www.facebook.com/AP-Tienda-Virtual-104232358684387" 
+          target="_blank"
+          rel="noopener noreferrer">
+          <SocialIcon color="3B5999">
+            <Facebook />
+          </SocialIcon></a>
+          <a href="https://www.instagram.com/aptiendavirtual/" 
+          target="_blank"
+          rel="noopener noreferrer">
             <SocialIcon color="E4405F">
-                <Instagram />
+              <Instagram />
             </SocialIcon>
-            <SocialIcon color="55ACEE">
-                <Twitter />
-            </SocialIcon>
-            <SocialIcon color="E60023">
-                <Pinterest />
-            </SocialIcon>
+          </a>       
+          {/* <SocialIcon color="55ACEE">
+            <Twitter />
+          </SocialIcon>
+          <SocialIcon color="E60023">
+            <Pinterest />
+          </SocialIcon> */}
         </SocialContainer>
       </Left>
       <Center>
-          <Title>Envíos a toda Colombia</Title>
-          <List>
-              <ListItem>Inicio</ListItem>
-              <ListItem>Compras</ListItem>
-              <ListItem>Moda hombre</ListItem>
-              <ListItem>Moda mujer</ListItem>
-              <ListItem>Accesorios</ListItem>
-              <ListItem>Mi cuenta</ListItem>
-              <ListItem>Rastreo de ordenes</ListItem>
-              <ListItem>Lista de deseos</ListItem>
-              <ListItem>Terminos y condiciones</ListItem>
-          </List>
+        <Title>Envíos a toda Colombia</Title>
+        <List>
+          <ListItem>Inicio</ListItem>
+          <ListItem>Compras</ListItem>
+          <ListItem>Moda hombre</ListItem>
+          <ListItem>Moda mujer</ListItem>
+          <ListItem>Accesorios</ListItem>
+          <ListItem>Mi cuenta</ListItem>
+          <ListItem>Rastreo de ordenes</ListItem>
+          <ListItem>Lista de deseos</ListItem>
+          <ListItem>Terminos y condiciones</ListItem>
+        </List>
       </Center>
       <Right>
-          <Title>Contacto</Title>
-          <ContactItem><Room style={{marginRight:"10px"}}/>
-              Cartagena de Indias - Colombia
-          </ContactItem>
-          <ContactItem><Phone style={{marginRight:"10px"}}/>
-              +57 310 7010719
-          </ContactItem>
-          <ContactItem><MailOutline style={{marginRight:"10px"}}/>
-              tiendavirtualap@gmail.com
-          </ContactItem>
-          <Payment src="https://icsa.edu.co/wp-content/uploads/2020/03/medios_de_pago.png" />
+        <Title>Contacto</Title>
+        <ContactItem>
+          <Room style={{ marginRight: "10px" }} />
+          Cartagena de Indias - Colombia
+        </ContactItem>
+        <ContactItem>
+          <Phone style={{ marginRight: "10px" }} />
+          +57 310 7010719
+        </ContactItem>
+        <ContactItem>
+          <MailOutline style={{ marginRight: "10px" }} />
+          tiendavirtualap@gmail.com
+        </ContactItem>
+        <Payment src="https://icsa.edu.co/wp-content/uploads/2020/03/medios_de_pago.png" />
       </Right>
     </Container>
   );
